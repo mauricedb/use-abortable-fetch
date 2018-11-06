@@ -10,7 +10,7 @@ or
 `yarn add use-abortable-fetch`
 
 ## Example usage:
-```
+```JavaScript
 import React from 'react';
 import useAbortableFetch from 'use-abortable-fetch';
 
