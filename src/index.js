@@ -13,7 +13,7 @@ const fetchData = (url, signal, setState) => {
       setState(oldState => ({
         ...oldState,
         data,
-        loading: false
+        loading: oldState.loading - 1
       }));
     })
     .catch(err => {
@@ -22,7 +22,7 @@ const fetchData = (url, signal, setState) => {
       setState(oldState => ({
         ...oldState,
         error,
-        loading: false
+        loading: oldState.loading - 1
       }));
     });
 };
@@ -30,7 +30,7 @@ const fetchData = (url, signal, setState) => {
 const useAbortableFetch = url => {
   const [state, setState] = useState({
     data: null,
-    loading: false,
+    loading: 0,
     error: null,
     controller: null
   });
@@ -46,12 +46,12 @@ const useAbortableFetch = url => {
   useEffect(
     () => {
       const controller = new AbortController();
-      setState({
+      setState(oldState => ({
         data: null,
-        loading: true,
+        loading: oldState.loading + 1,
         error: null,
         controller
-      });
+      }));
 
       fetchData(url, controller.signal, state => {
         if (isMounted.current) {
@@ -66,7 +66,7 @@ const useAbortableFetch = url => {
 
   return {
     data: state.data,
-    loading: state.loading,
+    loading: !!state.loading,
     error: state.error,
     abort: () => state.controller && state.controller.abort()
   };
