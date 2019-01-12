@@ -9,11 +9,11 @@
   "author": "Maurice de Beijer <maurice.de.beijer@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "parcel-bundler": "^1.10.3",
-    "react": "^16.7.0-alpha.0",
-    "react-dom": "^16.7.0-alpha.0"
+    "parcel-bundler": "^1.11.0",
+    "react": "^16.8.0-alpha.0",
+    "react-dom": "^16.8.0-alpha.0"
   },
   "peerDependencies": {
-    "react": "^16.7.0-alpha.0"
+    "react": "^16.8.0-alpha.0"
   }
 }
