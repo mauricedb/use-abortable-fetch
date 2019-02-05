@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import useAbortableFetch from '../src';
+import useAbortableFetch from '..';
 
 const Joke = ({ url }) => {
   const { data: joke, loading, error, abort } = useAbortableFetch(url);

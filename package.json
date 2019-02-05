@@ -1,15 +1,21 @@
 {
   "name": "use-abortable-fetch",
   "version": "0.3.0",
-  "main": "src/index.js",
+  "main": "release/index.js",
+  "umd:main": "release/index.umd.js",
+  "module": "release/index.mjs",
+  "source": "src/index.js",
   "scripts": {
     "start": "parcel example/index.html",
+    "build": "microbundle",
+    "dev": "microbundle watch",
     "prettier": "prettier --write {src,example}/**/*.{js,jsx}"
   },
   "repository": "git@github.com:mauricedb/use-abortable-fetch.git",
   "author": "Maurice de Beijer <maurice.de.beijer@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "microbundle": "^0.9.0",
     "parcel-bundler": "^1.11.0",
     "prettier": "^1.16.4",
     "react": "^16.8.0-alpha.0",
