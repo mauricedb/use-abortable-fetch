@@ -15,16 +15,14 @@
   "author": "Maurice de Beijer <maurice.de.beijer@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "microbundle": "^0.9.0",
-    "parcel-bundler": "^1.11.0",
-    "prettier": "^1.16.4",
-    "react": "^16.8.0-alpha.0",
-    "react-dom": "^16.8.0-alpha.0"
+    "@types/react": "16.8.1",
+    "microbundle": "0.9.0",
+    "parcel-bundler": "1.11.0",
+    "prettier": "1.16.4",
+    "react": "16.8.0-alpha.1",
+    "react-dom": "16.8.0-alpha.1"
   },
   "peerDependencies": {
-    "react": "^16.8.0-alpha.0"
-  },
-  "dependencies": {
-    "@types/react": "^16.8.1"
+    "react": "^16.8.0-alpha.1"
   }
 }
