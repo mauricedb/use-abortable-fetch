@@ -4,7 +4,7 @@
   "main": "release/index.js",
   "umd:main": "release/index.umd.js",
   "module": "release/index.mjs",
-  "source": "src/index.js",
+  "source": "src/index.ts",
   "scripts": {
     "start": "parcel example/index.html",
     "build": "microbundle",

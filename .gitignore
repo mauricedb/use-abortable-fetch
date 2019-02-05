@@ -20,4 +20,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+.rts2_cache_cjs
+.rts2_cache_es
+.rts2_cache_umd
+
 dist

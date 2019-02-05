@@ -4,7 +4,7 @@ const fetchData = (url, signal, setState) => {
   fetch(url, { signal })
     .then(rsp =>
       rsp.ok
-        ? rsp
+        ? Promise.resolve(rsp)
         : Promise.reject({
             message: rsp.statusText,
             status: rsp.status
