@@ -1,7 +1,7 @@
 declare const useAbortableFetch: <T>(url: string, init?: RequestInit) => {
-    data: T;
+    data: T | null;
     loading: boolean;
-    error: Error;
+    error: Error | null;
     abort: () => void;
 };
 export default useAbortableFetch;
