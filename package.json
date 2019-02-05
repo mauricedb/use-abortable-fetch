@@ -23,5 +23,8 @@
   },
   "peerDependencies": {
     "react": "^16.8.0-alpha.0"
+  },
+  "dependencies": {
+    "@types/react": "^16.8.1"
   }
 }

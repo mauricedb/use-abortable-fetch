@@ -1,36 +1,65 @@
-const { useState, useEffect, useLayoutEffect, useRef } = require('react');
+import {
+  useState,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  Dispatch,
+  SetStateAction
+} from 'react';
 
-const fetchData = (url, signal, setState) => {
-  fetch(url, { signal })
-    .then(rsp =>
-      rsp.ok
-        ? Promise.resolve(rsp)
-        : Promise.reject({
-            message: rsp.statusText,
-            status: rsp.status
-          })
-    )
-    .then(rsp => rsp.json())
-    .then(data => {
-      setState(oldState => ({
-        ...oldState,
-        data,
-        loading: oldState.loading - 1
-      }));
-    })
-    .catch(err => {
-      const error = err.name !== 'AbortError' ? err : null;
+const useAbortableFetch = <T>(
+  url: string,
+  init: RequestInit = {}
+): {
+  data: T | null;
+  loading: boolean;
+  error: Error | null;
+  abort: () => void;
+} => {
+  type FetchState = {
+    data: T | null;
+    loading: number;
+    error: null | Error;
+    controller: AbortController | null;
+  };
 
-      setState(oldState => ({
-        ...oldState,
-        error,
-        loading: oldState.loading - 1
-      }));
-    });
-};
+  const fetchData = (
+    url: string,
+    init: RequestInit,
+    signal: AbortSignal,
+    setState: Dispatch<SetStateAction<FetchState>>
+  ) => {
+    const actualInit: RequestInit = { ...init, signal };
 
-const useAbortableFetch = url => {
-  const [state, setState] = useState({
+    fetch(url, actualInit)
+      .then(rsp =>
+        rsp.ok
+          ? Promise.resolve(rsp)
+          : Promise.reject({
+              message: rsp.statusText,
+              status: rsp.status
+            })
+      )
+      .then(rsp => rsp.json())
+      .then(data => {
+        setState((oldState: FetchState) => ({
+          ...oldState,
+          data,
+          loading: oldState.loading - 1
+        }));
+      })
+      .catch((err: Error) => {
+        const error = err.name !== 'AbortError' ? err : null;
+
+        setState((oldState: FetchState) => ({
+          ...oldState,
+          error,
+          loading: oldState.loading - 1
+        }));
+      });
+  };
+
+  const [state, setState] = useState<FetchState>({
     data: null,
     loading: 0,
     error: null,
@@ -45,26 +74,23 @@ const useAbortableFetch = url => {
     };
   }, []);
 
-  useEffect(
-    () => {
-      const controller = new AbortController();
-      setState(oldState => ({
-        data: null,
-        loading: oldState.loading + 1,
-        error: null,
-        controller
-      }));
+  useEffect(() => {
+    const controller = new AbortController();
+    setState((oldState: FetchState) => ({
+      data: null,
+      loading: oldState.loading + 1,
+      error: null,
+      controller
+    }));
 
-      fetchData(url, controller.signal, state => {
-        if (isMounted.current) {
-          setState(state);
-        }
-      });
+    fetchData(url, init, controller.signal, state => {
+      if (isMounted.current) {
+        setState(state);
+      }
+    });
 
-      return () => controller.abort();
-    },
-    [url]
-  );
+    return () => controller.abort();
+  }, [url]);
 
   return {
     data: state.data,
@@ -74,4 +100,4 @@ const useAbortableFetch = url => {
   };
 };
 
-module.exports = useAbortableFetch;
+export default useAbortableFetch;
