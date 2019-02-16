@@ -8,7 +8,8 @@
     "start": "parcel example/index.html",
     "build": "microbundle",
     "dev": "microbundle watch",
-    "prettier": "prettier --write {src,example}/**/*.{js,jsx}"
+    "prettier": "prettier --write {src,example}/**/*.{js,ts,jsx,tsx}",
+    "test": "microbundle"
   },
   "repository": "git@github.com:mauricedb/use-abortable-fetch.git",
   "author": "Maurice de Beijer <maurice.de.beijer@gmail.com>",
