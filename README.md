@@ -1,5 +1,7 @@
 # use-abortable-fetch
 
+[![Build Status](https://travis-ci.org/mauricedb/use-abortable-fetch.svg?branch=master)](https://travis-ci.org/mauricedb/use-abortable-fetch)
+
 React hook that does a fetch and aborts when the components is unloaded or a new fetch is started.
 
 _Warning: Hooks are currently a React [RFC](https://github.com/reactjs/rfcs/pull/68) and **not ready for production**. Use at minimum `react@16.7.0-alpha.0` to use this package._
