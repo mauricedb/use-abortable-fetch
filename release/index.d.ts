@@ -1,4 +1,4 @@
-declare const useAbortableFetch: <T>(url: string, init?: RequestInit) => {
+declare const useAbortableFetch: <T>(url: string | null, init?: RequestInit) => {
     data: T | null;
     loading: boolean;
     error: Error | null;

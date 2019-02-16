@@ -8,7 +8,7 @@ import {
 } from 'react';
 
 const useAbortableFetch = <T>(
-  url: string,
+  url: string | null,
   init: RequestInit = {}
 ): {
   data: T | null;
@@ -76,18 +76,20 @@ const useAbortableFetch = <T>(
 
   useEffect(() => {
     const controller = new AbortController();
-    setState((oldState: FetchState) => ({
-      data: null,
-      loading: oldState.loading + 1,
-      error: null,
-      controller
-    }));
+    if (url) {
+      setState((oldState: FetchState) => ({
+        data: null,
+        loading: oldState.loading + 1,
+        error: null,
+        controller
+      }));
 
-    fetchData(url, init, controller.signal, state => {
-      if (isMounted.current) {
-        setState(state);
-      }
-    });
+      fetchData(url, init, controller.signal, state => {
+        if (isMounted.current) {
+          setState(state);
+        }
+      });
+    }
 
     return () => controller.abort();
   }, [url]);
