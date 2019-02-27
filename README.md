@@ -1,6 +1,6 @@
 # use-abortable-fetch
 
-[![Build Status](https://travis-ci.org/mauricedb/use-abortable-fetch.svg?branch=master)](https://travis-ci.org/mauricedb/use-abortable-fetch)
+[![Build Status](https://travis-ci.org/mauricedb/use-abortable-fetch.svg?branch=master)](https://travis-ci.org/mauricedb/use-abortable-fetch) [![Greenkeeper badge](https://badges.greenkeeper.io/mauricedb/use-abortable-fetch.svg)](https://greenkeeper.io/)
 
 React hook that does a fetch and aborts when the components is unloaded or a new fetch request is started.
 
