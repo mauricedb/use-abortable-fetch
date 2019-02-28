@@ -15,7 +15,7 @@
   "author": "Maurice de Beijer <maurice.de.beijer@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@types/react": "16.8.5",
+    "@types/react": "16.8.6",
     "microbundle": "0.10.1",
     "parcel-bundler": "1.11.0",
     "prettier": "1.16.4",
