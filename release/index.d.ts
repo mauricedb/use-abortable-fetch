@@ -1,5 +1,5 @@
-declare const useAbortableFetch: <T>(url: string | null, init?: RequestInit) => {
-    data: T | null;
+declare const useAbortableFetch: <T>(url: string | null, init?: RequestInitStreaming) => {
+    data: T | Uint8Array | null;
     loading: boolean;
     error: Error | null;
     abort: () => void;

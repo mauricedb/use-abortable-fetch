@@ -9,15 +9,15 @@ import {
 
 const useAbortableFetch = <T>(
   url: string | null,
-  init: RequestInit = {}
+  init: RequestInitStreaming = {}
 ): {
-  data: T | null;
+  data: T | Uint8Array | null;
   loading: boolean;
   error: Error | null;
   abort: () => void;
 } => {
   type FetchState = {
-    data: T | null;
+    data: T | Uint8Array | null;
     loading: number;
     error: null | Error;
     controller: AbortController | null;
@@ -25,7 +25,7 @@ const useAbortableFetch = <T>(
 
   const fetchData = (
     url: string,
-    init: RequestInit,
+    init: RequestInitStreaming,
     signal: AbortSignal,
     setState: Dispatch<SetStateAction<FetchState>>
   ) => {
@@ -40,7 +40,25 @@ const useAbortableFetch = <T>(
               status: rsp.status
             })
       )
-      .then(rsp => rsp.json())
+      .then(rsp => {
+        if (!init.streaming) return rsp.json();
+        if (!rsp.body) throw new Error('Invalid response body');
+
+        const reader = rsp.body.getReader();
+        (async () => {
+          while (true) {
+            const { value, done } = await reader.read();
+            if (done) {
+              break;
+            }
+
+            setState((oldState: FetchState) => ({
+              ...oldState,
+              data: value,
+            }));
+          }
+        })();
+      })
       .then(data => {
         setState((oldState: FetchState) => ({
           ...oldState,
