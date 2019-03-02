@@ -31,4 +31,6 @@ const ChuckNorrisJoke = () => {
 export default ChuckNorrisJoke;
 ```
 
+Or if you want a stream of jokes, assuming the endpoint supports it, just pass `{streaming: true}` as second argument. Where `data` will now be continues chunks received from the streaming endpoint.
+
 See this [CodeSandbox](https://codesandbox.io/s/n5q6xmwwq0) for a running example.

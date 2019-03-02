@@ -7,6 +7,10 @@ import {
   SetStateAction
 } from 'react';
 
+interface RequestInitStreaming extends RequestInit {
+  streaming?: boolean;
+}
+
 const useAbortableFetch = <T>(
   url: string | null,
   init: RequestInitStreaming = {}
