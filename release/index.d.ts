@@ -1,8 +1,8 @@
-interface RequestInitStreaming extends RequestInit {
+interface RequestInitStream extends RequestInit {
     streaming?: boolean;
 }
-declare const useAbortableFetch: <T>(url: string | null, init?: RequestInitStreaming) => {
-    data: T | Uint8Array | null;
+declare const useAbortableFetch: (url: string | null, init?: RequestInitStream) => {
+    data: Response | ArrayBuffer | null;
     loading: boolean;
     error: Error | null;
     abort: () => void;
