@@ -2,6 +2,9 @@ import React from 'react';
 import { render, cleanup, waitForElement } from 'react-testing-library';
 import fetch from 'jest-fetch-mock';
 
+// Note: Both tests still produce the following error message
+//   Warning: An update to LoadData inside a test was not wrapped in act(...).
+
 import useAbortableFetch from './index';
 
 (global as any).fetch = fetch;
