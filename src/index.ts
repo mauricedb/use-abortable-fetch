@@ -1,17 +1,12 @@
 import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 
-import { FetchState } from './types';
+import { FetchState, AbortableFetchResult } from './types';
 import fetchData from './fetchData';
 
 const useAbortableFetch = <T>(
   url: string | null,
   init: RequestInit = {}
-): {
-  data: T | null;
-  loading: boolean;
-  error: Error | null;
-  abort: () => void;
-} => {
+): AbortableFetchResult<T> => {
   const [state, setState] = useState<FetchState<T>>({
     data: null,
     loading: 0,
