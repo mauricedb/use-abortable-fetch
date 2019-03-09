@@ -1,6 +1,6 @@
 import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 
-import FetchState from './FetchState';
+import { FetchState } from './types';
 import fetchData from './fetchData';
 
 const useAbortableFetch = <T>(

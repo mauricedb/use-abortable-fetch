@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction } from 'react';
 
-import FetchState from './FetchState';
+import { FetchState } from './types';
 
-const fetchData = <T>(
+const fetchData = async <T>(
   url: string,
   init: RequestInit,
   signal: AbortSignal,
@@ -10,32 +10,32 @@ const fetchData = <T>(
 ) => {
   const actualInit: RequestInit = { ...init, signal };
 
-  fetch(url, actualInit)
-    .then(rsp =>
-      rsp.ok
-        ? Promise.resolve(rsp)
-        : Promise.reject({
-            message: rsp.statusText,
-            status: rsp.status
-          })
-    )
-    .then(rsp => rsp.json())
-    .then(data => {
-      setState((oldState: FetchState<T>) => ({
-        ...oldState,
-        data,
-        loading: oldState.loading - 1
-      }));
-    })
-    .catch((err: Error) => {
-      const error = err.name !== 'AbortError' ? err : null;
+  try {
+    const rsp = await fetch(url, actualInit);
 
-      setState((oldState: FetchState<T>) => ({
-        ...oldState,
-        error,
-        loading: oldState.loading - 1
-      }));
-    });
+    if (!rsp.ok) {
+      const err: any = new Error(rsp.statusText);
+      err.status = rsp.status;
+      throw err;
+    }
+    const data = await rsp.json();
+
+    setState((oldState: FetchState<T>) => ({
+      ...oldState,
+      data,
+      loading: oldState.loading - 1
+    }));
+  } catch (e) {
+    const err: Error = e;
+
+    const error = err.name !== 'AbortError' ? err : null;
+
+    setState((oldState: FetchState<T>) => ({
+      ...oldState,
+      error,
+      loading: oldState.loading - 1
+    }));
+  }
 };
 
 export default fetchData;
