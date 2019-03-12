@@ -1007,6 +1007,11 @@
   dependencies:
     "@types/jest-diff" "*"
 
+"@types/media-typer@0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@types/media-typer/-/media-typer-0.3.0.tgz#b9fc39fdceb066463c4c29408c44f51252727d07"
+  integrity sha512-Fk34eOs6nHW7S81Ik67dRfFYD6DNFl9MnwvoIIs2a+IUFtG81jBjZZZolQgAmI+dNWaU8NFOeN5XGIOAuzSTyQ==
+
 "@types/node@*", "@types/node@^10.11.7":
   version "10.12.21"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.21.tgz#7e8a0c34cf29f4e17a36e9bd0ea72d45ba03908e"
