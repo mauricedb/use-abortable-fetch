@@ -1,5 +1,5 @@
 type SharedFetchState<T> = {
-  data: T | null;
+  data: T | string | null;
   error: Error | null;
 };
 

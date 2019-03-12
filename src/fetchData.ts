@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 
 import { FetchState } from './types';
+import isJSON from './isJSON';
 
 const fetchData = async <T>(
   url: string,
@@ -18,7 +19,14 @@ const fetchData = async <T>(
       err.status = rsp.status;
       throw err;
     }
-    const data = await rsp.json();
+    let data: T | string | null = null;
+
+    const contentTypeHeader = rsp.headers.get('content-type');
+    if (isJSON(contentTypeHeader)) {
+      data = await rsp.json();
+    } else {
+      data = await rsp.text();
+    }
 
     setState((oldState: FetchState<T>) => ({
       ...oldState,
