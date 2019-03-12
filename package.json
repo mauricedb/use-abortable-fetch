@@ -9,7 +9,8 @@
     "build": "microbundle",
     "dev": "microbundle watch",
     "prettier": "prettier --write {src,example}/**/*.{js,ts,jsx,tsx}",
-    "test": "jest"
+    "test": "jest",
+    "eslint": "eslint ./src/**/*.ts?"
   },
   "repository": "git@github.com:mauricedb/use-abortable-fetch.git",
   "author": "Maurice de Beijer <maurice.de.beijer@gmail.com>",
@@ -17,6 +18,10 @@
   "devDependencies": {
     "@types/react": "16.8.8",
     "@types/react-dom": "16.8.2",
+    "@typescript-eslint/eslint-plugin": "^1.4.2",
+    "@typescript-eslint/parser": "^1.4.2",
+    "eslint": "^5.15.1",
+    "eslint-plugin-react": "^7.12.4",
     "jest": "24.3.1",
     "jest-fetch-mock": "2.1.1",
     "microbundle": "0.11.0",
