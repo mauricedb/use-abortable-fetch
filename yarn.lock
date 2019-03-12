@@ -1022,14 +1022,14 @@
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.1.tgz#48fd98c1561fe718b61733daed46ff115b496e18"
   integrity sha512-eqz8c/0kwNi/OEHQfvIuJVLTst3in0e7uTKeuY+WL/zfKn0xVujOTp42bS/vUUokhK5P2BppLd9JXMOMHcgbjA==
 
-"@types/react-dom@^16.8.2":
+"@types/react-dom@16.8.2":
   version "16.8.2"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.8.2.tgz#9bd7d33f908b243ff0692846ef36c81d4941ad12"
   integrity sha512-MX7n1wq3G/De15RGAAqnmidzhr2Y9O/ClxPxyqaNg96pGyeXUYPSvujgzEVpLo9oIP4Wn1UETl+rxTN02KEpBw==
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.8.7":
+"@types/react@*", "@types/react@16.8.7":
   version "16.8.7"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.7.tgz#7b1c0223dd5494f9b4501ad2a69aa6acb350a29b"
   integrity sha512-0xbkIyrDNKUn4IJVf8JaCn+ucao/cq6ZB8O6kSzhrJub1cVSqgTArtG0qCfdERWKMEIvUbrwLXeQMqWEsyr9dA==
@@ -4200,7 +4200,7 @@ jest-environment-node@^24.3.1:
     jest-mock "^24.3.0"
     jest-util "^24.3.0"
 
-jest-fetch-mock@^2.1.1:
+jest-fetch-mock@2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/jest-fetch-mock/-/jest-fetch-mock-2.1.1.tgz#fa9c5fdd228fb0d073456658831ae89cec9543e6"
   integrity sha512-/E0I80zMRTTExfM7QQZsqizT31EMHCBnqACERd2QR+7riSgta3OcHF3RzakukzQ4o3oEyIi6OleB3PAU6ArgDg==
@@ -4450,7 +4450,7 @@ jest-worker@^24.3.1:
     merge-stream "^1.0.1"
     supports-color "^6.1.0"
 
-jest@^24.3.1:
+jest@24.3.1:
   version "24.3.1"
   resolved "https://registry.yarnpkg.com/jest/-/jest-24.3.1.tgz#81959de0d57b2df923510f4fafe266712d37dcca"
   integrity sha512-SqZguEbYNcZ3r0KUUBN+IkKfyPS1VBbIUiK4Wrc0AiGUR52gJa0fmlWSOCL3x25908QrfoQwkVDu5jCsfXb2ig==
@@ -4832,6 +4832,11 @@ mdn-data@~1.1.0:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-1.1.4.tgz#50b5d4ffc4575276573c4eedb8780812a8419f01"
   integrity sha512-FSYbp3lyKjyj3E7fMl6rYvUdX0FBXaluGqlFoYESWQlyUTq8R+wp0rkFxoYFqZlHCvsUXGjyJmLQSnXToYhOSA==
+
+media-typer@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-1.0.1.tgz#e39d677e19a011c52d2681f430d1adafb299dd41"
+  integrity sha512-v42gdPIuqYCoDVH5OiaKsVrv6aJqdMWJzl8KCyDs/KeDyBveYp3Wxq4UWJfsWjkSZUNC0xlLfDlLCPa1h/oo+g==
 
 mem@^4.0.0:
   version "4.1.0"
@@ -6791,7 +6796,7 @@ react-is@^16.8.4:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.4.tgz#90f336a68c3a29a096a3d648ab80e87ec61482a2"
   integrity sha512-PVadd+WaUDOAciICm/J1waJaSvgq+4rHE/K70j0PFqKhkTBsPv/82UGQJNXAngz1fOQLLxI6z1sEDmJDQhCTAA==
 
-react-testing-library@^6.0.0:
+react-testing-library@6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/react-testing-library/-/react-testing-library-6.0.0.tgz#81edfcfae8a795525f48685be9bf561df45bb35d"
   integrity sha512-h0h+YLe4KWptK6HxOMnoNN4ngu3W8isrwDmHjPC5gxc+nOZOCurOvbKVYCvvuAw91jdO7VZSm/5KR7TxKnz0qA==
@@ -8042,7 +8047,7 @@ trim-right@^1.0.1:
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
   integrity sha1-yy4SAwZ+DI3h9hQJS5/kVwTqYAM=
 
-ts-jest@^24.0.0:
+ts-jest@24.0.0:
   version "24.0.0"
   resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-24.0.0.tgz#3f26bf2ec1fa584863a5a9c29bd8717d549efbf6"
   integrity sha512-o8BO3TkMREpAATaFTrXkovMsCpBl2z4NDBoLJuWZcJJj1ijI49UnvDMfVpj+iogn/Jl8Pbhuei5nc/Ti+frEHw==
