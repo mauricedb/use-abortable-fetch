@@ -11,7 +11,7 @@ import useAbortableFetch from './index';
 afterEach(cleanup);
 
 const LoadData = () => {
-  const { data, loading, error, abort } = useAbortableFetch(
+  const { data, loading, error } = useAbortableFetch(
     'http://some-server'
   );
 
@@ -25,7 +25,11 @@ const LoadData = () => {
 };
 
 test('Renders the data after success', async () => {
-  (fetch as any).mockResponseOnce(JSON.stringify({ x: 1 }));
+  (fetch as any).mockResponseOnce(JSON.stringify({ x: 1 }), {
+    headers: {
+      'content-type': 'application/json'
+    }
+  });
 
   const { getByText } = render(<LoadData />);
 
