@@ -6,7 +6,8 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended'
+    'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint'
   ],
   globals: {
     Atomics: 'readonly',
@@ -20,5 +21,10 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['react'],
+  settings: {
+    react: {
+      version: 'detect'
+    }
+  },
   rules: {}
 };
