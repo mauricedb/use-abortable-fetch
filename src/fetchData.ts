@@ -8,7 +8,7 @@ const fetchData = async <T>(
   init: RequestInit,
   signal: AbortSignal,
   setState: Dispatch<SetStateAction<FetchState<T>>>
-) => {
+): Promise<void> => {
   const actualInit: RequestInit = { ...init, signal };
 
   try {

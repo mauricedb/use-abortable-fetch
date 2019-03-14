@@ -40,7 +40,7 @@ const useAbortableFetch = <T>(
     }
 
     return () => controller.abort();
-  }, [url]);
+  }, [init, url]);
 
   return {
     data: state.data,

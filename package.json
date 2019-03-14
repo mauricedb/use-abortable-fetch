@@ -10,7 +10,7 @@
     "dev": "microbundle watch",
     "prettier": "prettier --write {src,example}/**/*.{js,ts,jsx,tsx}",
     "test": "jest",
-    "eslint": "eslint ./src/**/*.ts?"
+    "eslint": "eslint ./src/**/*.{ts,tsx}"
   },
   "repository": "git@github.com:mauricedb/use-abortable-fetch.git",
   "author": "Maurice de Beijer <maurice.de.beijer@gmail.com>",
