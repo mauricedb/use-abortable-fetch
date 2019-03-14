@@ -1,7 +1,7 @@
-type SharedFetchState<T> = {
+interface SharedFetchState<T> {
   data: T | string | null;
   error: Error | null;
-};
+}
 
 export type FetchState<T> = SharedFetchState<T> & {
   controller: AbortController | null;

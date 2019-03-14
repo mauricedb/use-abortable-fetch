@@ -5,10 +5,10 @@ import isJSON from './isJSON';
 
 const fetchData = async <T>(
   url: string,
-  init: RequestInit,
+  init: RequestInit = {},
   signal: AbortSignal,
   setState: Dispatch<SetStateAction<FetchState<T>>>
-) => {
+): Promise<void> => {
   const actualInit: RequestInit = { ...init, signal };
 
   try {
