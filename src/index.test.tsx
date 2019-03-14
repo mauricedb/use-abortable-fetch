@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import React from 'react';
 import { render, cleanup, waitForElement } from 'react-testing-library';
 import fetch from 'jest-fetch-mock';
@@ -10,10 +12,8 @@ import useAbortableFetch from './index';
 (global as any).fetch = fetch;
 afterEach(cleanup);
 
-const LoadData = () => {
-  const { data, loading, error } = useAbortableFetch(
-    'http://some-server'
-  );
+const LoadData = (): JSX.Element => {
+  const { data, loading, error } = useAbortableFetch('http://some-server');
 
   return (
     <div>
