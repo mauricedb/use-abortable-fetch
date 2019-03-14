@@ -5,7 +5,7 @@ import fetchData from './fetchData';
 
 const useAbortableFetch = <T>(
   url: string | null,
-  init: RequestInit = {}
+  init?: RequestInit
 ): AbortableFetchResult<T> => {
   const [state, setState] = useState<FetchState<T>>({
     data: null,

@@ -7,13 +7,13 @@ import fetch from 'jest-fetch-mock';
 // Note: Both tests still produce the following error message
 //   Warning: An update to LoadData inside a test was not wrapped in act(...).
 
-import iuseAbortableFetch from './index';
+import useAbortableFetch from './index';
 
 (global as any).fetch = fetch;
 afterEach(cleanup);
 
 const LoadData = (): JSX.Element => {
-  const { data, loading, error } = iuseAbortableFetch('http://some-server');
+  const { data, loading, error } = useAbortableFetch('http://some-server');
 
   return (
     <div>
