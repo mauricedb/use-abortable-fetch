@@ -2,7 +2,6 @@ import { Dispatch, SetStateAction } from 'react';
 
 import { FetchState } from './types';
 import isJSON from './isJSON';
-import { CustomConsole } from '@jest/console';
 
 const fetchData = async <T>(
   url: string,
