@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction } from 'react';
 
 import { FetchState } from './types';
 import isJSON from './isJSON';
+import { CustomConsole } from '@jest/console';
 
 const fetchData = async <T>(
   url: string,
@@ -13,24 +14,30 @@ const fetchData = async <T>(
 
   try {
     const rsp = await fetch(url, actualInit);
+    const contentTypeHeader = rsp.headers.get('content-type');
+
+    if (contentTypeHeader) {
+      let data: T | string | null = null;
+
+      if (isJSON(contentTypeHeader)) {
+        data = await rsp.json();
+      } else {
+        data = await rsp.text();
+      }
+      setState((oldState: FetchState<T>) => ({
+        ...oldState,
+        data
+      }));
+    }
 
     if (!rsp.ok) {
       const err: any = new Error(rsp.statusText);
       err.status = rsp.status;
       throw err;
     }
-    let data: T | string | null = null;
-
-    const contentTypeHeader = rsp.headers.get('content-type');
-    if (isJSON(contentTypeHeader)) {
-      data = await rsp.json();
-    } else {
-      data = await rsp.text();
-    }
 
     setState((oldState: FetchState<T>) => ({
       ...oldState,
-      data,
       loading: oldState.loading - 1
     }));
   } catch (e) {

@@ -41,13 +41,23 @@ test('Renders the data after success', async () => {
 });
 
 test('Renders the error after failure', async () => {
-  (fetch as any).mockRejectOnce({ status: 404 });
+  (fetch as any).mockResponseOnce(
+    JSON.stringify({
+      x: 2
+    }),
+    {
+      status: 404,
+      headers: {
+        'content-type': 'application/json'
+      }
+    }
+  );
 
   const { getByText } = render(<LoadData />);
 
   getByText('Loading: true');
   await waitForElement(() => getByText('Loading: false'));
 
-  getByText('Data: null');
+  getByText('Data: {"x":2}');
   getByText('Error: {"status":404}');
 });
