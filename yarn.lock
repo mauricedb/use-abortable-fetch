@@ -7196,10 +7196,10 @@ react-is@^16.8.4:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.4.tgz#90f336a68c3a29a096a3d648ab80e87ec61482a2"
   integrity sha512-PVadd+WaUDOAciICm/J1waJaSvgq+4rHE/K70j0PFqKhkTBsPv/82UGQJNXAngz1fOQLLxI6z1sEDmJDQhCTAA==
 
-react-testing-library@6.1.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/react-testing-library/-/react-testing-library-6.1.0.tgz#f51dda681a5c644ecf124a9d4c70a3fd82d77823"
-  integrity sha512-Jb3iRbxkpTtcWhlBaB4VmurvcP73bvypD49WlhzEqx0NXI40Ny6jerfXrwbee6mkFxLzmilKGQKi80eozCSHyA==
+react-testing-library@6.1.2:
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/react-testing-library/-/react-testing-library-6.1.2.tgz#f6bba6eeecedac736eb00b22b4c70bae04535a4f"
+  integrity sha512-z69lhRDGe7u/NOjDCeFRoe1cB5ckJ4656n0tj/Fdcr6OoBUu7q9DBw0ftR7v5i3GRpdSWelnvl+feZFOyXyxwg==
   dependencies:
     "@babel/runtime" "^7.4.2"
     dom-testing-library "^3.19.0"
