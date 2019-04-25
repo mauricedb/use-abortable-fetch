@@ -5191,10 +5191,10 @@ mdn-data@~1.1.0:
   resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-1.1.4.tgz#50b5d4ffc4575276573c4eedb8780812a8419f01"
   integrity sha512-FSYbp3lyKjyj3E7fMl6rYvUdX0FBXaluGqlFoYESWQlyUTq8R+wp0rkFxoYFqZlHCvsUXGjyJmLQSnXToYhOSA==
 
-media-typer@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-1.0.2.tgz#e64b0a709d52c158ddedaf38ebebfa00d8e02c14"
-  integrity sha512-/ky7iFD18Y2mN5BdOS4zotSSgu11BsIR2l3L7eK2bTaRWQidoSBmSxGgMFd/XOSGyivlhtQUdDLoUzlr1PWb1g==
+media-typer@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-1.1.0.tgz#6ab74b8f2d3320f2064b2a87a38e7931ff3a5561"
+  integrity sha512-aisnrDP4GNe06UcKFnV5bfMNPBUw4jsLGaWwWfnH3v02GnBuXX2MCVn5RbrWo0j3pczUilYblq7fQ7Nw2t5XKw==
 
 mem@^4.0.0:
   version "4.1.0"
