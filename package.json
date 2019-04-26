@@ -24,7 +24,7 @@
     "@typescript-eslint/eslint-plugin": "^1.4.2",
     "@typescript-eslint/parser": "^1.4.2",
     "eslint": "^5.15.1",
-    "eslint-config-prettier": "4.1.0",
+    "eslint-config-prettier": "4.2.0",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "^1.5.1",
     "jest": "24.3.1",
