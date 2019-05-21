@@ -35,17 +35,19 @@ const fetchData = async <T>(
         data,
         loading: oldState.loading - 1
       }));
-    } else {
-      setState((oldState: FetchState<T>) => ({
-        ...oldState,
-        loading: oldState.loading - 1
-      }));
     }
 
     if (!rsp.ok) {
       const err: any = new Error(rsp.statusText);
       err.status = rsp.status;
       throw err;
+    }
+
+    if (!contentTypeHeader) {
+      setState((oldState: FetchState<T>) => ({
+        ...oldState,
+        loading: oldState.loading - 1
+      }));
     }
   } catch (e) {
     const err: Error = e;
@@ -54,7 +56,8 @@ const fetchData = async <T>(
 
     setState((oldState: FetchState<T>) => ({
       ...oldState,
-      error
+      error,
+      loading: oldState.loading - 1
     }));
   }
 };
