@@ -25,14 +25,7 @@ const useAbortableFetch = <T>(
   useEffect(() => {
     const controller = new AbortController();
     if (url) {
-      setState((oldState: FetchState<T>) => ({
-        data: null,
-        loading: oldState.loading + 1,
-        error: null,
-        controller
-      }));
-
-      fetchData<T>(url, init, controller.signal, state => {
+      fetchData<T>(url, init, controller, state => {
         if (isMounted.current) {
           setState(state);
         }
