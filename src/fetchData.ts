@@ -11,6 +11,7 @@ const fetchData = async <T>(
 ): Promise<void> => {
   const actualInit: RequestInit = { ...init, signal: controller.signal };
 
+  let rsp: Response | null = null;
   try {
     setState((oldState: FetchState<T>) => ({
       data: null,
@@ -19,7 +20,7 @@ const fetchData = async <T>(
       controller
     }));
 
-    const rsp = await fetch(url, actualInit);
+    rsp = await fetch(url, actualInit);
     const contentTypeHeader = rsp.headers.get('content-type');
 
     if (contentTypeHeader) {
@@ -35,19 +36,17 @@ const fetchData = async <T>(
         data,
         loading: oldState.loading - 1
       }));
+    } else {
+      setState((oldState: FetchState<T>) => ({
+        ...oldState,
+        loading: oldState.loading - 1
+      }));
     }
 
     if (!rsp.ok) {
       const err: any = new Error(rsp.statusText);
       err.status = rsp.status;
       throw err;
-    }
-
-    if (!contentTypeHeader) {
-      setState((oldState: FetchState<T>) => ({
-        ...oldState,
-        loading: oldState.loading - 1
-      }));
     }
   } catch (e) {
     const err: Error = e;
@@ -57,7 +56,8 @@ const fetchData = async <T>(
     setState((oldState: FetchState<T>) => ({
       ...oldState,
       error,
-      loading: oldState.loading - 1
+      // Only decrease the loading counter if there is no repsonse
+      loading: rsp ? oldState.loading : oldState.loading - 1
     }));
   }
 };
