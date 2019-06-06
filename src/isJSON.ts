@@ -1,7 +1,9 @@
 import mediaTyper from 'media-typer';
 import contentType from 'content-type';
 
-export default function isJSON(contentTypeHeader: string | null): boolean {
+export default function isJSON(
+  contentTypeHeader: string | null | undefined
+): boolean {
   if (contentTypeHeader) {
     const ct = contentType.parse(contentTypeHeader);
 

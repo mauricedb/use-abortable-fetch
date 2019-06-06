@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import React from 'react';
-import { render, cleanup, waitForElement } from 'react-testing-library';
+import { render, cleanup, waitForElement } from '@testing-library/react';
 import fetch from 'jest-fetch-mock';
 
 // Note: Both tests still produce the following error message

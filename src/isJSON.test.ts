@@ -30,6 +30,9 @@ test.each([
   'application/activity+xml',
   'text/xml',
   'text/html'
-])('Content type "%s" should not be JSON', (contentType: string) => {
-  expect(isJSON(contentType)).toBeFalsy();
-});
+])(
+  'Content type "%s" should not be JSON',
+  (contentType: string | null | undefined) => {
+    expect(isJSON(contentType)).toBeFalsy();
+  }
+);
