@@ -1,1 +1,1 @@
-export default function isJSON(contentTypeHeader: string | null): boolean;
+export default function isJSON(contentTypeHeader: string | null | undefined): boolean;
