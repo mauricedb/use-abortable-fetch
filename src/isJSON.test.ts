@@ -18,7 +18,7 @@ test.each([
   'application/vnd.restful+json',
   'text/json',
   'model/gltf+json'
-])('Content type "%s" should be JSON', (contentType: string) => {
+])('Content type "%s" should be JSON', (contentType: string): void => {
   expect(isJSON(contentType)).toBeTruthy();
 });
 
@@ -32,7 +32,7 @@ test.each([
   'text/html'
 ])(
   'Content type "%s" should not be JSON',
-  (contentType: string | null | undefined) => {
+  (contentType: string | null | undefined): void => {
     expect(isJSON(contentType)).toBeFalsy();
   }
 );

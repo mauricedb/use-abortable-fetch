@@ -13,12 +13,14 @@ const fetchData = async <T>(
 
   let rsp: Response | null = null;
   try {
-    setState((oldState: FetchState<T>) => ({
-      data: null,
-      loading: oldState.loading + 1,
-      error: null,
-      controller
-    }));
+    setState(
+      (oldState: FetchState<T>): FetchState<T> => ({
+        data: null,
+        loading: oldState.loading + 1,
+        error: null,
+        controller
+      })
+    );
 
     rsp = await fetch(url, actualInit);
     const contentTypeHeader = rsp.headers.get('content-type');
@@ -31,16 +33,20 @@ const fetchData = async <T>(
       } else {
         data = await rsp.text();
       }
-      setState((oldState: FetchState<T>) => ({
-        ...oldState,
-        data,
-        loading: oldState.loading - 1
-      }));
+      setState(
+        (oldState: FetchState<T>): FetchState<T> => ({
+          ...oldState,
+          data,
+          loading: oldState.loading - 1
+        })
+      );
     } else {
-      setState((oldState: FetchState<T>) => ({
-        ...oldState,
-        loading: oldState.loading - 1
-      }));
+      setState(
+        (oldState: FetchState<T>): FetchState<T> => ({
+          ...oldState,
+          loading: oldState.loading - 1
+        })
+      );
     }
 
     if (!rsp.ok) {
@@ -53,12 +59,14 @@ const fetchData = async <T>(
 
     const error = err.name !== 'AbortError' ? err : null;
 
-    setState((oldState: FetchState<T>) => ({
-      ...oldState,
-      error,
-      // Only decrease the loading counter if there is no repsonse
-      loading: rsp ? oldState.loading : oldState.loading - 1
-    }));
+    setState(
+      (oldState: FetchState<T>): FetchState<T> => ({
+        ...oldState,
+        error,
+        // Only decrease the loading counter if there is no repsonse
+        loading: rsp ? oldState.loading : oldState.loading - 1
+      })
+    );
   }
 };
 

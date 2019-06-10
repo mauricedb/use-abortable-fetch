@@ -15,31 +15,31 @@ const useAbortableFetch = <T>(
   });
 
   const isMounted = useRef(false);
-  useLayoutEffect(() => {
+  useLayoutEffect((): (() => void) => {
     isMounted.current = true;
-    return () => {
+    return (): void => {
       isMounted.current = false;
     };
   }, []);
 
-  useEffect(() => {
+  useEffect((): (() => void) => {
     const controller = new AbortController();
     if (url) {
-      fetchData<T>(url, init, controller, state => {
+      fetchData<T>(url, init, controller, (state): void => {
         if (isMounted.current) {
           setState(state);
         }
       });
     }
 
-    return () => controller.abort();
+    return (): void => controller.abort();
   }, [init, url]);
 
   return {
     data: state.data,
     loading: !!state.loading,
     error: state.error,
-    abort: () => state.controller && state.controller.abort()
+    abort: (): null | void => state.controller && state.controller.abort()
   };
 };
 

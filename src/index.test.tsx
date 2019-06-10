@@ -24,7 +24,7 @@ const LoadData = (): JSX.Element => {
   );
 };
 
-test('Renders the data after success', async () => {
+test('Renders the data after success', async (): Promise<void> => {
   (fetch as any).mockResponseOnce(JSON.stringify({ x: 1 }), {
     headers: {
       'content-type': 'application/json'
@@ -34,13 +34,13 @@ test('Renders the data after success', async () => {
   const { getByText } = render(<LoadData />);
 
   getByText('Loading: true');
-  await waitForElement(() => getByText('Loading: false'));
+  await waitForElement((): any => getByText('Loading: false'));
 
   getByText('Data: {"x":1}');
   getByText('Error: null');
 });
 
-test('Renders the error after failure', async () => {
+test('Renders the error after failure', async (): Promise<void> => {
   (fetch as any).mockResponseOnce(
     JSON.stringify({
       x: 2
@@ -56,7 +56,7 @@ test('Renders the error after failure', async () => {
   const { getByText } = render(<LoadData />);
 
   getByText('Loading: true');
-  await waitForElement(() => getByText('Loading: false'));
+  await waitForElement((): any => getByText('Loading: false'));
 
   getByText('Data: {"x":2}');
   getByText('Error: {"status":404}');
