@@ -23,7 +23,7 @@
     "@types/react": "16.8.22",
     "@types/react-dom": "16.8.4",
     "@typescript-eslint/eslint-plugin": "1.10.2",
-    "@typescript-eslint/parser": "1.10.2",
+    "@typescript-eslint/parser": "1.11.0",
     "eslint": "6.0.0",
     "eslint-config-prettier": "5.0.0",
     "eslint-plugin-react": "7.13.0",
