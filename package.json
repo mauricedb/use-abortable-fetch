@@ -26,7 +26,7 @@
     "@typescript-eslint/parser": "1.11.0",
     "eslint": "6.0.0",
     "eslint-config-prettier": "5.0.0",
-    "eslint-plugin-react": "7.14.1",
+    "eslint-plugin-react": "7.14.2",
     "eslint-plugin-react-hooks": "1.6.0",
     "jest": "24.8.0",
     "jest-fetch-mock": "2.1.2",
