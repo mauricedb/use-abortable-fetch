@@ -12,7 +12,10 @@
     "test": "jest",
     "eslint": "eslint ./src/**/*.{ts,tsx}"
   },
-  "repository": "git@github.com:mauricedb/use-abortable-fetch.git",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mauricedb/use-abortable-fetch.git"
+  },
   "author": "Maurice de Beijer <maurice.de.beijer@gmail.com>",
   "license": "MIT",
   "devDependencies": {
