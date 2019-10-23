@@ -37,7 +37,7 @@
     "parcel-bundler": "1.12.4",
     "prettier": "1.18.2",
     "react": "16.11.0",
-    "react-dom": "16.10.2",
+    "react-dom": "16.11.0",
     "ts-jest": "24.1.0"
   },
   "peerDependencies": {
