@@ -28,7 +28,7 @@
     "@typescript-eslint/eslint-plugin": "2.4.0",
     "@typescript-eslint/parser": "2.5.0",
     "eslint": "6.6.0",
-    "eslint-config-prettier": "6.4.0",
+    "eslint-config-prettier": "6.5.0",
     "eslint-plugin-react": "7.16.0",
     "eslint-plugin-react-hooks": "2.2.0",
     "jest": "24.9.0",
