@@ -29,7 +29,7 @@
     "@typescript-eslint/parser": "2.9.0",
     "eslint": "6.7.1",
     "eslint-config-prettier": "6.7.0",
-    "eslint-plugin-react": "7.16.0",
+    "eslint-plugin-react": "7.17.0",
     "eslint-plugin-react-hooks": "2.3.0",
     "jest": "24.9.0",
     "jest-fetch-mock": "2.1.2",
