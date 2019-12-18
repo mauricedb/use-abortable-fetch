@@ -1,6 +1,6 @@
 {
   "name": "use-abortable-fetch",
-  "version": "2.6.5",
+  "version": "2.6.6",
   "main": "release/index.js",
   "umd:main": "release/index.umd.js",
   "source": "src/index.ts",
