@@ -36,8 +36,8 @@
     "microbundle": "0.11.0",
     "parcel-bundler": "1.12.4",
     "prettier": "1.19.1",
-    "react": "16.13.0",
-    "react-dom": "16.13.0",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
     "ts-jest": "25.2.1"
   },
   "peerDependencies": {
