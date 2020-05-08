@@ -33,7 +33,7 @@
     "eslint-plugin-react-hooks": "4.0.0",
     "jest": "25.1.0",
     "jest-fetch-mock": "3.0.3",
-    "microbundle": "0.11.0",
+    "microbundle": "0.12.0",
     "parcel-bundler": "1.12.4",
     "prettier": "2.0.5",
     "react": "16.13.1",
