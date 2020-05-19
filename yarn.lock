@@ -1604,10 +1604,10 @@
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.4.tgz#38fd73ddfd9b55abb1e1b2ed578cb55bd7b7d339"
   integrity sha512-8+KAKzEvSUdeo+kmqnKrqgeE+LcA0tjYWFY7RPProVYwnqDjukzO+3b6dLD56rYX5TdWejnEOLJYOIeh4CXKuA==
 
-"@types/media-typer@0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@types/media-typer/-/media-typer-0.3.0.tgz#b9fc39fdceb066463c4c29408c44f51252727d07"
-  integrity sha512-Fk34eOs6nHW7S81Ik67dRfFYD6DNFl9MnwvoIIs2a+IUFtG81jBjZZZolQgAmI+dNWaU8NFOeN5XGIOAuzSTyQ==
+"@types/media-typer@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@types/media-typer/-/media-typer-1.1.0.tgz#f7345897c848d36b7231f0f11f855fa1ef4c0078"
+  integrity sha512-JTkIazWsZYHon19I15kuPeJP/Cg6aLFBSXxF8Pj4uqxDkKo3+jqHy6u55ebTJaMvxbutjsIHqLx+osisSQIHbA==
 
 "@types/node@*":
   version "13.9.0"
