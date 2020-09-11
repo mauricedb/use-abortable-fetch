@@ -30,7 +30,7 @@
     "eslint": "7.8.1",
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-react": "7.20.6",
-    "eslint-plugin-react-hooks": "4.1.0",
+    "eslint-plugin-react-hooks": "4.1.1",
     "jest": "26.4.2",
     "jest-fetch-mock": "3.0.3",
     "microbundle": "0.12.3",
