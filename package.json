@@ -27,7 +27,7 @@
     "@types/content-type": "1.1.5",
     "@types/jest": "26.0.24",
     "@types/media-typer": "1.1.1",
-    "@types/react": "17.0.14",
+    "@types/react": "17.0.15",
     "@types/react-dom": "17.0.9",
     "@typescript-eslint/eslint-plugin": "4.28.2",
     "@typescript-eslint/parser": "4.28.2",
