@@ -25,7 +25,7 @@
   "devDependencies": {
     "@testing-library/react": "12.1.2",
     "@types/content-type": "1.1.5",
-    "@types/jest": "27.0.2",
+    "@types/jest": "27.0.3",
     "@types/media-typer": "1.1.1",
     "@types/react": "17.0.34",
     "@types/react-dom": "17.0.11",
