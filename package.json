@@ -23,7 +23,7 @@
   "author": "Maurice de Beijer <maurice.de.beijer@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@testing-library/react": "13.4.0",
+    "@testing-library/react": "14.0.0",
     "@types/content-type": "1.1.5",
     "@types/jest": "27.5.0",
     "@types/media-typer": "1.1.1",
