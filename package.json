@@ -26,7 +26,7 @@
     "@testing-library/react": "14.0.0",
     "@types/content-type": "1.1.7",
     "@types/jest": "27.5.0",
-    "@types/media-typer": "1.1.1",
+    "@types/media-typer": "1.1.2",
     "@types/react": "18.2.30",
     "@types/react-dom": "18.2.14",
     "@typescript-eslint/eslint-plugin": "4.33.0",
