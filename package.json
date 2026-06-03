@@ -49,6 +49,6 @@
   },
   "dependencies": {
     "content-type": "1.0.5",
-    "media-typer": "1.1.0"
+    "media-typer": "2.0.0"
   }
 }
