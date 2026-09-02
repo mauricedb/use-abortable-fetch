@@ -48,7 +48,7 @@
     "react": ">=16.13.0"
   },
   "dependencies": {
-    "content-type": "2.0.0",
+    "content-type": "3.0.0",
     "media-typer": "2.0.0"
   }
 }
