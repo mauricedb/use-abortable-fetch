@@ -42,7 +42,7 @@
     "prettier": "3.9.9",
     "react": "19.3.1",
     "react-dom": "19.3.0",
-    "ts-jest": "29.4.14"
+    "ts-jest": "29.4.15"
   },
   "peerDependencies": {
     "react": ">=16.13.0"
